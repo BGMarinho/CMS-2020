@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+#include<locale.h>
+
+int main(){
+setlocale(LC_ALL,"portuguese");/*Definindo a localidade...*/
+
+float inf=0.0402;/*Descição de constantes*/
+float a, b;/*Descrição de variáveis*/
+    
+	printf("Bem-vindo(a) ao CMS2020!");/*Apresentação e boas vindas; Calculcador da Mensalidade de Serviços para 2020 - CMS2020*/
+
+    
+	printf("\n\nEntre com o custo anual do serviço: R$");/*Custo esperado no período de um ano*/
+    scanf("%f", &a);/*Entrada*/
+	
+	
+	printf("\n-----MONTANTE-----");
+    	printf("\nO valor digitado foi: R$%.2f", a);/*Usuário(a) verifica se o valor digitado para o montante está correto*/
+		printf("\nTaxa inflacionária incidente sobre o montante: R$%.2f", a*inf);/*Usuário verifica o valor da taxa sobre o montante informado*/
+		
+	
+	printf("\n\n-----MENSALIDADES-----");
+		printf("\nO valor mensal do serviço é: R$%.2f", a/12);/*Usuário(a) verifica o valor correspondente a cada mês*/
+	
+	b = a/12;
+		
+		printf("\nTaxa inflacionária incidente em cada mensalidade: R$%.2f", b*inf);/*Usuário(a) verifica a taxa inflacionária incidente sobre as mensalidades*/
+    	printf("\nO valor da mensalidade corrigido é: R$%.2f", b*inf+b);/*Usuário(a) verifica o valor de cada mensalidade acrescido da taxa inflacionária*/
+	
+	
+	printf("\n\n-----VARIFICANDO...-----");
+		printf("\nValor acumulado da taxa sobre os 12 meses: R$%.2f\n\n", b*inf*12);/*Usuário(a) verifica se esse valor é igual ao da taxa incidente sobre o montante*/
+
+system ("pause");/*O system pause SEMPRE antes do returno 0, porque se retornar zero antes de pausar, o programa se encerra sem dar resultado*/
+return (0);/*Retorna 0 nessa função inteira*/
+}
